@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
-  Background,
   type Container,
   type ISourceOptions,
   MoveDirection,
@@ -25,8 +24,10 @@ const headerInVariants = {
 
 const tokenExInVariants = {
   hidden: { opacity: 0, y: 0 },
-  visible: { opacity: 1, y: -50, transition: { duration: 0.8 } },
+  visible: { opacity: 1, y: -40, transition: { duration: 1.2, delay: 0.5 } },
 };
+//opacity 는 투명도
+//y는 hidden 시작점이 0이고 visible -50이니까 위로 50 만큼 이동
 
 const App = () => {
   const [init, setInit] = useState(false);
