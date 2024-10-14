@@ -7,7 +7,7 @@ const TokenEx : FC = () => {
         <Flex w="full" pt={40}>
             <Flex mx="auto" mt={24}>
                 <Flex ml={4} alignItems="center">
-                    <Flex justifyContent="center" h="14vh" flexDir="column">
+                    <Flex justifyContent="center" h="14vh" flexDir="column" pt={12}>
                         <Text w="700px" fontSize="40px" fontWeight="bold" color="white">
                             THW is peer to peer innovative  network
                         </Text>
@@ -52,7 +52,7 @@ const TokenEx : FC = () => {
                             left: "0",
                             width: "100%",
                             height: "100%",
-                            background: "rgba(255, 255, 255, 0.1)", // 흰색 반투명 줄 효과
+                            background: "rgba(255, 255, 255, 0.3)", // 흰색 반투명 줄 효과
                             transition: "transform 0.5s ease", // 부드럽게 애니메이션 적용
                             transform: "translateX(0%)", // 효과가 어디서 부터 시작할건지
                             }}
@@ -81,7 +81,7 @@ const TokenEx : FC = () => {
                                 left: "0",
                                 width: "100%",
                                 height: "100%",
-                                background: "rgba(255, 255, 255, 0.1)", // 흰색 반투명 줄 효과
+                                background: "rgba(255, 255, 255, 0.3)", // 흰색 반투명 줄 효과
                                 transition: "transform 0.5s ease", // 부드럽게 애니메이션 적용
                                 transform: "translateX(0%)", // 효과가 어디서 부터 시작할건지
                               }}

@@ -9,16 +9,19 @@ const TokenEx2 : FC = () => {
             w="full"
             minH="100vh"
             color="white"
-            pt={40}
+            pt={10}
             zIndex={2}
+            flexDir="column"
+            alignItems="center"
         >
-            Meet Our Solution For yousssssssssssssssssss
-            ssssssssssssssssss
-            <Img src="images/giphy.gif"/>
+            <Text fontSize="26px" mb={12}>
+                Meet Our Solution For You
+            </Text>
+            <Text w={["600px","600px","650px","650px","750px"]} color="white" textAlign="center">
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
+            </Text>
         </Flex>
-        <Text color="white">
-            ddddddddddddddddddd
-        </Text>
+        
         </>
     )
 }

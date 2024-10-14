@@ -25,8 +25,24 @@ const headerInVariants = {
 
 const tokenExInVariants = {
   hidden: { opacity: 0, y: 0 },
-  visible: { opacity: 1, y: -40, transition: { duration: 1.2, delay: 0.5 } },
+  visible: { opacity: 1, y: -40, transition: { duration: 1.2, delay: 1.2 } },
 };
+const tokenEx2InVariants = {
+  hidden: { 
+    opacity: 0, 
+    clipPath: "inset(0 50% 0 50%)", // 중앙에서부터 시작해서 양옆이 잘린 상태로 표시
+  },
+  visible: { 
+    opacity: 1, 
+    clipPath: "inset(0 0% 0 0%)",  // 양옆으로 펼쳐지면서 보여줌
+    transition: { 
+      duration: 1.5, 
+      delay: 0.5, 
+      ease: "easeOut" 
+    }
+  },
+};
+
 //opacity 는 투명도
 //y는 hidden 시작점이 0이고 visible -50이니까 위로 50 만큼 이동
 
@@ -143,10 +159,15 @@ const App = () => {
     <div ref={tokenExRef}>
       <TokenEx/>
     </div>
-    
+    </motion.div>
+    <motion.div
+    initial="hidden"
+    animate="visible"
+    variants={tokenEx2InVariants}>
     <div ref={tokenAdRef}>
       <TokenEx2/>
     </div>
+    </motion.div>
     <div ref={tokenUtilRef}>
       <TokenUtility />
     </div>
@@ -154,7 +175,7 @@ const App = () => {
     <div ref={tokenRoadmapRef}>
       <TokenRoadMap />
     </div>
-    </motion.div>
+    
     </>
     <Footer />
     </div>
