@@ -11,11 +11,12 @@ import { BeatLoader } from "react-spinners";
 import { motion } from "framer-motion"; 
 import Header from "./components/Header";
 import TokenEx from "./components/TokenEx";
-import TokenEx2 from "./components/TokenEx2";
+
 import TokenUtility from "./components/TokenUtility";
 import TokenAllocation from "./components/TokenAllocation";
 import TokenRoadMap from "./components/TokenRoadMap";
 import Footer from "./components/Footer";
+import TokenEx2 from "./components/TokenEx2";
 
 const headerInVariants = {
   hidden: { opacity: 0, y: -50 },
@@ -73,7 +74,7 @@ const App = () => {
         onHover: { enable: true, mode: "repulse" },
       },
       modes: {
-        push: { quantity: 4 },
+        push: { quantity: 0 }, //클릭했을 떄 입자 수 증가
         repulse: { distance: 200, duration: 0.4 },
       },
     },
@@ -118,7 +119,7 @@ const App = () => {
 
   return (
     <>
-    <div style={{"background" : "green"}}>
+    <div>
     <Particles
       id="tsparticles"
       particlesLoaded={particlesLoaded}
@@ -142,9 +143,9 @@ const App = () => {
     <div ref={tokenExRef}>
       <TokenEx/>
     </div>
-    </motion.div>
+    
     <div ref={tokenAdRef}>
-      <TokenEx2 />
+      <TokenEx2/>
     </div>
     <div ref={tokenUtilRef}>
       <TokenUtility />
@@ -153,6 +154,7 @@ const App = () => {
     <div ref={tokenRoadmapRef}>
       <TokenRoadMap />
     </div>
+    </motion.div>
     </>
     <Footer />
     </div>

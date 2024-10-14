@@ -1,6 +1,7 @@
 import { Button, Flex, Img, Menu, MenuButton, MenuList, MenuItem, Image } from "@chakra-ui/react";
 import { FC, useEffect, useState } from "react";
 import StyledButton from "./StyledButton";
+import { BiCaretDown } from "react-icons/bi";
 
 
 interface HeaderProps {
@@ -81,17 +82,40 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
                     <Flex alignItems="center">
                     <Image src="images/us.png" w="20px" h="20px"/>
                     <Menu>
-                    <MenuButton as={Button} variant="none" color="white">
-                        EN
+                    <MenuButton as={Button} variant="none" color="white" _hover={{"color" : "#A3468C", "transition" : "color 0.5s ease"}}>
+                        <Flex >
+                            EN<BiCaretDown />
+                        </Flex>
                     </MenuButton>
-                    <MenuList>
-                        <MenuItem onClick={() => alert('옵션 1 선택됨')}>옵션 1</MenuItem>
-                        <MenuItem onClick={() => alert('옵션 2 선택됨')}>옵션 2</MenuItem>
-                        <MenuItem onClick={() => alert('옵션 3 선택됨')}>옵션 3</MenuItem>
+                    <MenuList minWidth="100px" border="none" p={0}>
+                        <MenuItem bgColor="#0C0E27" color="white" _hover={{"fontWeight" : "bold", "color" : "#A3468C", "bgColor" : "gray.300", transition : "background-color 0.5s ease, color 0.1s ease"}} onClick={() => alert('EN')}><Image src="images/us.png" w="20px" h="20px" mr={2}/>EN</MenuItem>
+                        <MenuItem bgColor="#0C0E27" color="white" _hover={{"fontWeight" : "bold", "color" : "#A3468C", "bgColor" : "gray.300", transition : "background-color 0.5s ease, color 0.1s ease"}} onClick={() => alert('KR')}><Image src="images/kr.png" w="20px" h="20px" mr={2}/>KR</MenuItem>
                     </MenuList>
                     </Menu>
                     </Flex>
-                    <Button>WHITE PAPER</Button>
+                    <Button 
+                    bgGradient="linear(to-r, #ff3b8f, #ff9a3b)" 
+                    color="white"
+                    borderRadius="24px"
+                    overflow="hidden"
+                    _hover= {{
+                        backgroundColor : "#0C0E27",
+                        _before : {
+                            transform : "translateX(100%)",
+                        },
+                    }}
+                    _before={{
+                        content : "''",
+                        position : "absolute",
+                        top : "0",
+                        left : "0",
+                        width : "100%",
+                        height : "100%",
+                        background : "rgba(255, 255, 255, 0.1)",
+                        transition : "transform 0.5s ease",
+                        transform : "translateX(0%)",
+                    }}
+                    >WHITE PAPER</Button>
                 </Flex>
             </Flex>
         </Flex>
