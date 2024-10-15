@@ -146,7 +146,8 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenUtilRef, 
             display={["flex","flex","flex","none","none","none","none"]}
             opacity={["1", "1", "1", "0", "0", "0", "0"]}
             justifyContent="space-between"
-            zIndex={4}>
+            zIndex={4}
+            mb={3}>
             <Img minW="180px" src="images/logo_thw.png" zIndex={4}/>
             <Menu>
                 <MenuButton

@@ -7,13 +7,12 @@ const TokenEx2 : FC = () => {
         <>
         <Flex
             w="100%"
-            h="auto"
+            minH="100vh"
             color="white"
             pt={28}
             zIndex={2}
             flexDir="column"
             alignItems="center"
-            justifyContent="center"
         >
             <Text fontSize="26px" mb={12}>
                 Meet Our Solution For You
