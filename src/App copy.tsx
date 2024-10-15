@@ -164,6 +164,17 @@ const App = () => {
     initial="hidden"
     animate="visible"
     variants={tokenEx2InVariants}>
+    <div ref={tokenAdRef}>
+      <TokenEx2/>
+    </div>
+    
+    <div ref={tokenUtilRef}>
+      <TokenUtility />
+    </div>
+    <TokenAllocation/>
+    <div ref={tokenRoadmapRef}>
+      <TokenRoadMap />
+    </div>
     </motion.div>
     </>
     <Footer />
