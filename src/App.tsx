@@ -12,11 +12,11 @@ import { motion } from "framer-motion";
 import Header from "./components/Header";
 import TokenEx from "./components/TokenEx";
 
-import TokenUtility from "./components/TokenUtility";
-import TokenAllocation from "./components/TokenAllocation";
-import TokenRoadMap from "./components/TokenRoadMap";
+// import TokenUtility from "./components/TokenUtility";
+// import TokenAllocation from "./components/TokenAllocation";
+// import TokenRoadMap from "./components/TokenRoadMap";
 import Footer from "./components/Footer";
-import TokenEx2 from "./components/TokenEx2";
+// import TokenEx2 from "./components/TokenEx2";
 
 const headerInVariants = {
   hidden: { opacity: 0, y: -50 },
