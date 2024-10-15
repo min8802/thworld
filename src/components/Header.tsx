@@ -64,11 +64,11 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
             zIndex={4} // 아래로 넘어갈 때 글자 안보임
         >
             <Flex minW="10%">
-                <Img minW={["180px","180px","180px","180px","180px","260px","260px"]} src="images/logo_thw.png"/>
+                <Img minW={["180px","180px","180px","180px","180px","220px","220px"]} src="images/logo_thw.png"/>
             </Flex>
             <Flex w="90%" justifyContent="flex-end" alignItems="center">
-                <Flex minW="992px" w="80%" h="6vh" justifyContent="center" alignItems="center">
-                    <Flex gap={4}>
+                <Flex minW="992px" w="80%" h="6vh" justifyContent="flex-end" alignItems="center" pr={20}>
+                    <Flex gap={["16px","16px","16px","16px","16px","20px","20px"]}>
                     {HeaderMenu.map((v) => (
                         <StyledButton 
                         buttonText={buttonText}
@@ -78,12 +78,12 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
                     ))}
                     </Flex>
                 </Flex>
-                <Flex gap={4}>
+                <Flex gap={4} alignItems="center">
                     <Flex alignItems="center">
                     <Image src="images/us.png" w="20px" h="20px"/>
                     <Menu>
                     <MenuButton as={Button} variant="none" color="white" _hover={{"color" : "#A3468C", "transition" : "color 0.5s ease"}}>
-                        <Flex >
+                        <Flex w={10} fontSize={["12px","12px","12px","12px","12px","16px","16px"]}>
                             EN<BiCaretDown />
                         </Flex>
                     </MenuButton>
@@ -93,7 +93,10 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
                     </MenuList>
                     </Menu>
                     </Flex>
-                    <Button 
+                    <Button
+                    w={["90px","90px","90px","90px","90px","120px","120px"]}
+                    h={["30px","30px","30px","30px","30px","36px","36px"]}
+                    fontSize={["10px","10px","10px","10px","10px","15px","15px"]} 
                     bgGradient="linear(to-r, #ff3b8f, #ff9a3b)" 
                     color="white"
                     borderRadius="24px"

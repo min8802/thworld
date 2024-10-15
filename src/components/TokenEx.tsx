@@ -4,7 +4,7 @@ import { FC } from "react";
 
 const TokenEx : FC = () => {
     return (
-        <Flex w="full" pt={40}>
+        <Flex w="full" pt={20}>
             <Flex mx="auto" mt={24}>
                 <Flex ml={4} alignItems="center">
                     <Flex justifyContent="center" h="14vh" flexDir="column" pt={12}>
@@ -91,10 +91,10 @@ const TokenEx : FC = () => {
                         </Flex>
                         <Text w="700px" fontSize="24px" color="white" mt={4} mb={4}>WE ACCEPT :</Text>
                         <Flex w="700px" gap={8}>
-                            <Text fontSize="24px" color="white" mt={4} mb={4}>BTC</Text>
-                            <Text fontSize="24px" color="white" mt={4} mb={4}>ETH</Text>
-                            <Text fontSize="24px" color="white" mt={4} mb={4}>BNB</Text>
-                            <Text fontSize="24px" color="white" mt={4} mb={4}>USDT</Text>
+                            <Flex fontSize="24px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/btc.png"/>BTC</Flex>
+                            <Flex fontSize="24px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/eth.png"/>ETH</Flex>
+                            <Flex fontSize="24px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/bnb.png"/>BNB</Flex>
+                            <Flex fontSize="24px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/usdt.png"/>USDT</Flex>
                         </Flex>
                         
                     </Flex>

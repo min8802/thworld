@@ -18,7 +18,7 @@ const StyledButton: FC<StyledButtonProps> = ({
 }) => {
   return (
     <Button
-        fontSize={["10px", "10px", "10px", "16px", "16px", "20px", "20px"]}
+        fontSize={["13px", "13px", "13px", "13px", "13px", "15px", "15px"]}
         variant="unstyled"
         color="white" // 기본 텍스트 색상
         position="relative"
@@ -26,7 +26,6 @@ const StyledButton: FC<StyledButtonProps> = ({
           setButtonText(v);
           scrollHandler();
         }}
-        p={4}
         h="auto"
         _hover={{
           "color" : "#A3468C",
