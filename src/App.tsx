@@ -146,6 +146,7 @@ const App = () => {
     initial="hidden"
     animate="visible"
     variants={headerInVariants}
+    style={{ width: "100%" }} // width를 100%로 고정
     >
       <Header tokenExRef={tokenExRef}
         tokenUtilRef={tokenUtilRef}
