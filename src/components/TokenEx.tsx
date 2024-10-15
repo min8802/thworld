@@ -4,14 +4,14 @@ import { FC } from "react";
 
 const TokenEx : FC = () => {
     return (
-        <Flex w="full" pt={20}>
-            <Flex mx="auto" mt={24}>
-                <Flex ml={4} alignItems="center">
+        <Flex w="full" pt={40} alignItems="center">
+            <Flex w={["1000px","1000px","1200px","1200px","1200px","1320px","1320px"]} mx="auto" mt={24}>
+                <Flex w={["560px","560px","560px","560px","560px","700px","700px"]} ml={4} alignItems="center">
                     <Flex justifyContent="center" h="14vh" flexDir="column" pt={12}>
-                        <Text w="700px" fontSize="40px" fontWeight="bold" color="white">
+                        <Text w={["500px","500px","500px","500px","500px","700px","700px"]} fontSize={["32px","32px","32px","32px","32px","40px","40px"]} fontWeight="bold" color="white">
                             THW is peer to peer innovative  network
                         </Text>
-                        <Text w="700px" fontSize="24px" color="white" mt={4} mb={4}>
+                        <Text w="700px" fontSize={["16px","16px","16px","16px","16px","24px","24px"]} color="white" mt={4} mb={4}>
                             Token Presale is 
                             <mark style={{
                                 marginLeft: "10px",
@@ -32,7 +32,7 @@ const TokenEx : FC = () => {
                         </Flex>
                         <Flex w="700px" gap={4} py={5}>
                         <Button
-                            h={16}
+                            h={["40px","40px","40px","40px","40px","52px","52px"]}
                             bgGradient="linear(to-r, #ff3b8f, #ff9a3b)"
                             color="white"
                             borderRadius="24px"
@@ -61,7 +61,7 @@ const TokenEx : FC = () => {
                         </Button>
                         
                         <Button
-                            h={16}
+                            h={["40px","40px","40px","40px","40px","52px","52px"]}
                             bgGradient="linear(to-r, #ff3b8f, #ff9a3b)"
                             color="white"
                             borderRadius="24px"
@@ -89,17 +89,17 @@ const TokenEx : FC = () => {
                             BUY TOKEN NOW! →
                         </Button>
                         </Flex>
-                        <Text w="700px" fontSize="24px" color="white" mt={4} mb={4}>WE ACCEPT :</Text>
+                        <Text w="700px" fontSize="16px" color="white" mt={4}>WE ACCEPT :</Text>
                         <Flex w="700px" gap={8}>
-                            <Flex fontSize="24px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/btc.png"/>BTC</Flex>
-                            <Flex fontSize="24px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/eth.png"/>ETH</Flex>
-                            <Flex fontSize="24px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/bnb.png"/>BNB</Flex>
-                            <Flex fontSize="24px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/usdt.png"/>USDT</Flex>
+                            <Flex fontSize="20px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/btc.png"/>BTC</Flex>
+                            <Flex fontSize="20px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/eth.png"/>ETH</Flex>
+                            <Flex fontSize="20px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/bnb.png"/>BNB</Flex>
+                            <Flex fontSize="20px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/usdt.png"/>USDT</Flex>
                         </Flex>
                         
                     </Flex>
                 </Flex>
-                <Img h="600px" src="images/giphy.gif" zIndex={2}/>
+                <Img h="480px" src="images/giphy.gif" zIndex={2}/>
             </Flex>
         </Flex> 
     )

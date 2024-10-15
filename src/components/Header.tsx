@@ -1,7 +1,8 @@
-import { Button, Flex, Img, Menu, MenuButton, MenuList, MenuItem, Image } from "@chakra-ui/react";
+import { Button, Flex, Img, Menu, MenuButton, MenuList, MenuItem, Image, IconButton } from "@chakra-ui/react";
 import { FC, useEffect, useState } from "react";
 import StyledButton from "./StyledButton";
 import { BiCaretDown } from "react-icons/bi";
+import { HamburgerIcon } from '@chakra-ui/icons';
 
 
 interface HeaderProps {
@@ -51,9 +52,11 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
     },[isScrolled]);
 
     return (
+        <>
         <Flex
+            display={["none","none","none","flex","flex","flex","flex"]} //왼쪽에서 3번째가 992px
             w="full"
-            px={["0","0","0","0","0","50","50"]}
+            px={["0","0","0","0","0","50","50"]}// 모바일, 480px이상, 768px이상, 992px이상, 1280px이상, 1536px이상
             py="25px"
             h={isScrolled ? "80px" : "110px"}
             transition="height 0.8s ease, background-color 0.8s ease" //height 속성값 변화할 때 transition 적용
@@ -67,7 +70,7 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
                 <Img minW={["180px","180px","180px","180px","180px","220px","220px"]} src="images/logo_thw.png"/>
             </Flex>
             <Flex w="90%" justifyContent="flex-end" alignItems="center">
-                <Flex minW="992px" w="80%" h="6vh" justifyContent="flex-end" alignItems="center" pr={20}>
+                <Flex w="80%" h="6vh" justifyContent="center" alignItems="center">
                     <Flex gap={["16px","16px","16px","16px","16px","20px","20px"]}>
                     {HeaderMenu.map((v) => (
                         <StyledButton 
@@ -122,6 +125,42 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
                 </Flex>
             </Flex>
         </Flex>
+        <Flex 
+            w="100%"
+            alignItems="center"
+            p={4}
+            position="fixed"
+            transition="all 0.5s ease"
+            opacity={["1", "1", "1", "0", "0", "0", "0"]}
+            justifyContent="space-between"
+            zIndex={4}>
+            <Img minW="180px" src="images/logo_thw.png"/>
+            <Menu>
+                <MenuButton
+                    as={IconButton}
+                    aria-label='Options'
+                    icon={<HamburgerIcon />}
+                    variant='outline'
+                    color="white"
+                />
+                <MenuList>
+                    <MenuItem >
+                    New Tab
+                    </MenuItem>
+                    <MenuItem >
+                    New Window
+                    </MenuItem>
+                    <MenuItem >
+                    Open Closed Tab
+                    </MenuItem>
+                    <MenuItem >
+                    Open File...
+                    </MenuItem>
+                </MenuList>
+            </Menu>
+        </Flex>
+
+        </>
     )
 }
 

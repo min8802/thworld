@@ -1,4 +1,4 @@
-import { Flex, Img, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { FC } from "react";
 
 

@@ -34,7 +34,7 @@ const StyledButton: FC<StyledButtonProps> = ({
         _after={{
           content : "''",
           position : "absolute",
-          bottom : 2,
+          bottom : -2,
           left : 0,
           width : children === buttonText ?  "100%" : "0",
           height : "2px",
