@@ -16,6 +16,7 @@ import TokenEx from "./components/TokenEx";
 // import TokenAllocation from "./components/TokenAllocation";
 // import TokenRoadMap from "./components/TokenRoadMap";
 import Footer from "./components/Footer";
+import TokenEx2 from "./components/TokenEx2";
 // import TokenEx2 from "./components/TokenEx2";
 
 const headerInVariants = {
@@ -50,8 +51,8 @@ const App = () => {
   const [init, setInit] = useState(false);
   const [showSpinner, setShowSpinner] = useState(true);
 
-  const tokenExRef = useRef<HTMLDivElement>(null);
-  const tokenAdRef = useRef<HTMLDivElement>(null);
+  const tokenHomeRef = useRef<HTMLDivElement>(null);
+  const tokenServiceRef = useRef<HTMLDivElement>(null);
   const tokenUtilRef = useRef<HTMLDivElement>(null);
   const tokenRoadmapRef = useRef<HTMLDivElement>(null);
 
@@ -147,23 +148,32 @@ const App = () => {
     animate="visible"
     variants={headerInVariants}
     >
-      <Header tokenExRef={tokenExRef}
+      <Header
+        tokenHomeRef={tokenHomeRef}
         tokenUtilRef={tokenUtilRef}
         tokenRoadmapRef={tokenRoadmapRef}
-        tokenAdRef={tokenAdRef}/>
+        tokenServiceRef={tokenServiceRef}/>
     </motion.div>
     <motion.div
     initial="hidden"
     animate="visible"
     variants={tokenExInVariants}>
-    <div ref={tokenExRef}>
-      <TokenEx/>
-    </div>
+      <div ref={tokenHomeRef}>
+        <TokenEx/>
+      </div>
     </motion.div>
     <motion.div
     initial="hidden"
     animate="visible"
     variants={tokenEx2InVariants}>
+    </motion.div>
+    <motion.div
+    initial="hidden"
+    animate="visible"
+    variants={tokenEx2InVariants}>
+    <div ref={tokenServiceRef}>
+      <TokenEx2/>
+    </div>
     </motion.div>
     </>
     <Footer />

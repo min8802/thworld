@@ -6,18 +6,19 @@ const TokenEx2 : FC = () => {
     return (
         <>
         <Flex
-            w="full"
-            minH="100vh"
+            w="100%"
+            h="auto"
             color="white"
-            pt={20}
+            pt={28}
             zIndex={2}
             flexDir="column"
             alignItems="center"
+            justifyContent="center"
         >
             <Text fontSize="26px" mb={12}>
                 Meet Our Solution For You
             </Text>
-            <Text w={["600px","600px","650px","650px","750px"]} color="white" textAlign="center">
+            <Text color="white" textAlign="center">
             There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
             </Text>
         </Flex>

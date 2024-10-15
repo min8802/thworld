@@ -6,16 +6,17 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 
 
 interface HeaderProps {
-    tokenExRef : React.RefObject<HTMLDivElement>;
+    tokenHomeRef : React.RefObject<HTMLDivElement>;
+    tokenServiceRef : React.RefObject<HTMLDivElement>;
     tokenUtilRef : React.RefObject<HTMLDivElement>;
     tokenRoadmapRef : React.RefObject<HTMLDivElement>;
-    tokenAdRef : React.RefObject<HTMLDivElement>;
+    
 }
 
 const HeaderMenu = ["HOME", "SERVICES", "ABOUT", "TOKEN", "ROADMAP", "TEAM", "FAQ", "CONTACT"];
 
 
-const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, tokenAdRef}) => {
+const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenUtilRef, tokenRoadmapRef }) => {
     
     const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const [buttonText, setButtonText] = useState<string>("");
@@ -25,14 +26,14 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
     }
 
     const scrollHandler = () => {
-        if (buttonText === "INTRODUCTION") {
-            scrollToComponent(tokenExRef);
-        } else if (buttonText === "TOKENUTILITY") {
-            scrollToComponent(tokenUtilRef);
+        if (buttonText === "HOME") {
+            scrollToComponent(tokenHomeRef);
+        } else if (buttonText === "SERVICES") {
+            scrollToComponent(tokenServiceRef);
         } else if (buttonText === "ROADMAP") {
             scrollToComponent(tokenRoadmapRef);
         } else {
-            scrollToComponent(tokenAdRef);
+            scrollToComponent(tokenUtilRef);
         }
     }
 
@@ -48,13 +49,24 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
     },[])
 
     useEffect(() => {
+        scrollHandler();
+    },[buttonText])
+
+    
+
+    useEffect(() => {
         console.log(isScrolled);
     },[isScrolled]);
+
+    useEffect(() => {
+        console.log(buttonText);
+    },[buttonText])
 
     return (
         <>
         <Flex
             display={["none","none","none","flex","flex","flex","flex"]}
+            position="fixed"
             w="100%"
             px={["0","0","0","0","0","50","50"]}// 모바일, 480px이상, 768px이상, 992px이상, 1280px이상, 1536px이상
             py="25px"
@@ -70,8 +82,9 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
             </Flex>
             <Flex h="6vh" justifyContent="center" alignItems="center">
                 <Flex gap={["16px","16px","16px","16px","16px","20px","20px"]}>
-                {HeaderMenu.map((v) => (
-                    <StyledButton 
+                {HeaderMenu.map((v,i) => (
+                    <StyledButton
+                    key={i} 
                     buttonText={buttonText}
                     setButtonText={setButtonText}
                     scrollHandler={scrollHandler}
@@ -130,7 +143,6 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
             w="100%"
             alignItems="center"
             p={4}
-            transition="all 0.5s ease"
             display={["flex","flex","flex","none","none","none","none"]}
             opacity={["1", "1", "1", "0", "0", "0", "0"]}
             justifyContent="space-between"

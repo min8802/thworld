@@ -13,7 +13,6 @@ const StyledButton: FC<StyledButtonProps> = ({
   children,
   buttonText,
   setButtonText,
-  scrollHandler,
   v
 }) => {
   return (
@@ -24,7 +23,6 @@ const StyledButton: FC<StyledButtonProps> = ({
         position="relative"
         onClick={() => {
           setButtonText(v);
-          scrollHandler();
         }}
         h="auto"
         _hover={{

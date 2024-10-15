@@ -4,10 +4,12 @@ import { FC } from "react";
 
 const TokenEx : FC = () => {
     return (
-        <Flex w="full" pt={40} alignItems="center">
-            <Flex w={["400px","400px","400px","400px","400px","1320px","1320px"]} mx="auto" mt={24}>
-                <Flex w={["400px","400px","400px","400px","400px","700px","700px"]} ml={4} alignItems="center">
-                    <Flex justifyContent="center" h="14vh" flexDir="column" pt={12}>
+        <Flex w="full" h="auto" alignItems="center">
+            <Flex mx="auto" mt={56}>
+                <Flex ml={4} alignItems="center">                  
+                    <Flex w="full" justifyContent="center">
+                        <Flex flexDir="column" justifyContent="center">
+                        <Img h={["420px","420px","420px","0","0px","0px","0px","0px"]} src="images/giphy.gif" zIndex={2}/>
                         <Text w="400px" fontSize={["32px","32px","32px","32px","32px","40px","40px"]} fontWeight="bold" color="white">
                             THW is peer to peer innovative  network
                         </Text>
@@ -25,12 +27,12 @@ const TokenEx : FC = () => {
                                 Live
                             </mark>
                         </Text>
-                        <Flex w="400px" h="390px" py={5} gap={4}>
+                        <Flex py={5} gap={4}>
                             <Img src="images/t_logo.png"/>
                             <Img src="images/x_logo.png"/>
                             <Img src="images/medium_logo.png"/>
                         </Flex>
-                        <Flex w="400px" gap={4} py={5}>
+                        <Flex gap={3} py={5}>
                         <Button
                             h={["40px","40px","40px","40px","40px","52px","52px"]}
                             bgGradient="linear(to-r, #ff3b8f, #ff9a3b)"
@@ -86,7 +88,7 @@ const TokenEx : FC = () => {
                                 transform: "translateX(0%)", // 효과가 어디서 부터 시작할건지
                               }}
                             >
-                            BUY TOKEN NOW! →
+                            BUY TOKEN NOW →
                         </Button>
                         </Flex>
                         <Text w="400px" fontSize="16px" color="white" mt={4}>WE ACCEPT :</Text>
@@ -96,10 +98,10 @@ const TokenEx : FC = () => {
                             <Flex fontSize="20px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/bnb.png"/>BNB</Flex>
                             <Flex fontSize="20px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/usdt.png"/>USDT</Flex>
                         </Flex>
-                        
+                        </Flex>
+                        <Img h={["0px","0px","0px","480px","480px","480px","480px","480px"]} src="images/giphy.gif" zIndex={2}/>
                     </Flex>
                 </Flex>
-                <Img h={["0px","0px","0px","0px","480px","480px","480px","480px"]} src="images/giphy.gif" zIndex={2}/>
             </Flex>
         </Flex> 
     )
