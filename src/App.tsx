@@ -167,7 +167,7 @@ const App = () => {
     <div ref={tokenAdRef}>
       <TokenEx2/>
     </div>
-    </motion.div>
+    
     <div ref={tokenUtilRef}>
       <TokenUtility />
     </div>
@@ -175,10 +175,12 @@ const App = () => {
     <div ref={tokenRoadmapRef}>
       <TokenRoadMap />
     </div>
-    
+    </motion.div>
     </>
     <Footer />
+    
     </div>
+    
     </>
   );
 };

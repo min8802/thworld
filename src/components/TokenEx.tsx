@@ -5,13 +5,13 @@ import { FC } from "react";
 const TokenEx : FC = () => {
     return (
         <Flex w="full" pt={40} alignItems="center">
-            <Flex w={["1000px","1000px","1200px","1200px","1200px","1320px","1320px"]} mx="auto" mt={24}>
-                <Flex w={["560px","560px","560px","560px","560px","700px","700px"]} ml={4} alignItems="center">
+            <Flex w={["400px","400px","400px","400px","400px","1320px","1320px"]} mx="auto" mt={24}>
+                <Flex w={["400px","400px","400px","400px","400px","700px","700px"]} ml={4} alignItems="center">
                     <Flex justifyContent="center" h="14vh" flexDir="column" pt={12}>
-                        <Text w={["500px","500px","500px","500px","500px","700px","700px"]} fontSize={["32px","32px","32px","32px","32px","40px","40px"]} fontWeight="bold" color="white">
+                        <Text w="400px" fontSize={["32px","32px","32px","32px","32px","40px","40px"]} fontWeight="bold" color="white">
                             THW is peer to peer innovative  network
                         </Text>
-                        <Text w="700px" fontSize={["16px","16px","16px","16px","16px","24px","24px"]} color="white" mt={4} mb={4}>
+                        <Text w="400px" fontSize={["16px","16px","16px","16px","16px","24px","24px"]} color="white" mt={4} mb={4}>
                             Token Presale is 
                             <mark style={{
                                 marginLeft: "10px",
@@ -25,12 +25,12 @@ const TokenEx : FC = () => {
                                 Live
                             </mark>
                         </Text>
-                        <Flex w="700px" h="390px" py={5} gap={4}>
+                        <Flex w="400px" h="390px" py={5} gap={4}>
                             <Img src="images/t_logo.png"/>
                             <Img src="images/x_logo.png"/>
                             <Img src="images/medium_logo.png"/>
                         </Flex>
-                        <Flex w="700px" gap={4} py={5}>
+                        <Flex w="400px" gap={4} py={5}>
                         <Button
                             h={["40px","40px","40px","40px","40px","52px","52px"]}
                             bgGradient="linear(to-r, #ff3b8f, #ff9a3b)"
@@ -89,8 +89,8 @@ const TokenEx : FC = () => {
                             BUY TOKEN NOW! →
                         </Button>
                         </Flex>
-                        <Text w="700px" fontSize="16px" color="white" mt={4}>WE ACCEPT :</Text>
-                        <Flex w="700px" gap={8}>
+                        <Text w="400px" fontSize="16px" color="white" mt={4}>WE ACCEPT :</Text>
+                        <Flex w="400px" gap={8}>
                             <Flex fontSize="20px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/btc.png"/>BTC</Flex>
                             <Flex fontSize="20px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/eth.png"/>ETH</Flex>
                             <Flex fontSize="20px" color="white" mt={4} mb={4} alignItems="center" gap={1}><Img w="24px" h="24px" src="images/bnb.png"/>BNB</Flex>

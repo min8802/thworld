@@ -125,41 +125,7 @@ const Header : FC<HeaderProps> = ({tokenExRef, tokenUtilRef, tokenRoadmapRef, to
                 </Flex>
             </Flex>
         </Flex>
-        <Flex 
-            w="100%"
-            alignItems="center"
-            p={4}
-            position="fixed"
-            transition="all 0.5s ease"
-            opacity={["1", "1", "1", "0", "0", "0", "0"]}
-            justifyContent="space-between"
-            zIndex={4}>
-            <Img minW="180px" src="images/logo_thw.png"/>
-            <Menu>
-                <MenuButton
-                    as={IconButton}
-                    aria-label='Options'
-                    icon={<HamburgerIcon />}
-                    variant='outline'
-                    color="white"
-                />
-                <MenuList>
-                    <MenuItem >
-                    New Tab
-                    </MenuItem>
-                    <MenuItem >
-                    New Window
-                    </MenuItem>
-                    <MenuItem >
-                    Open Closed Tab
-                    </MenuItem>
-                    <MenuItem >
-                    Open File...
-                    </MenuItem>
-                </MenuList>
-            </Menu>
-        </Flex>
-
+        
         </>
     )
 }
