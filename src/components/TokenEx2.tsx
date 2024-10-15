@@ -9,7 +9,7 @@ const TokenEx2 : FC = () => {
             w="full"
             minH="100vh"
             color="white"
-            pt={10}
+            pt={20}
             zIndex={2}
             flexDir="column"
             alignItems="center"

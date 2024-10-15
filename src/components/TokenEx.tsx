@@ -99,7 +99,7 @@ const TokenEx : FC = () => {
                         
                     </Flex>
                 </Flex>
-                <Img h="480px" src="images/giphy.gif" zIndex={2}/>
+                <Img h={["0px","0px","0px","0px","480px","480px","480px","480px"]} src="images/giphy.gif" zIndex={2}/>
             </Flex>
         </Flex> 
     )
