@@ -4,7 +4,7 @@ import { FC } from "react";
 
 const TokenEx : FC = () => {
     return (
-        //tokenEx2 컴포넌트의 상단 효과 보여 주고 높이 Header랑 간격 적절히 맞추려 100vh가 아닌 minH=70vh로 설정
+        //SERVICES 컴포넌트의 상단 효과 보여 주고 높이 Header랑 간격 적절히 맞추려 100vh가 아닌 minH=70vh로 설정
         <Flex w="full" minH="70vh" alignItems="center"> 
             <Flex mx="auto" mt={56}>
                 <Flex ml={4} alignItems="center">                  

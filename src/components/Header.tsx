@@ -8,7 +8,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 interface HeaderProps {
     tokenHomeRef : React.RefObject<HTMLDivElement>;
     tokenServiceRef : React.RefObject<HTMLDivElement>;
-    tokenUtilRef : React.RefObject<HTMLDivElement>;
+    tokenAboutRef : React.RefObject<HTMLDivElement>;
     tokenRoadmapRef : React.RefObject<HTMLDivElement>;
     
 }
@@ -16,7 +16,7 @@ interface HeaderProps {
 const HeaderMenu = ["HOME", "SERVICES", "ABOUT", "TOKEN", "ROADMAP", "TEAM", "FAQ", "CONTACT"];
 
 
-const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenUtilRef, tokenRoadmapRef }) => {
+const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef, tokenRoadmapRef }) => {
     
     const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const [buttonText, setButtonText] = useState<string>("");
@@ -30,10 +30,10 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenUtilRef, 
             scrollToComponent(tokenHomeRef);
         } else if (buttonText === "SERVICES") {
             scrollToComponent(tokenServiceRef);
+        } else if (buttonText === "ABOUT") {
+            scrollToComponent(tokenAboutRef);
         } else if (buttonText === "ROADMAP") {
             scrollToComponent(tokenRoadmapRef);
-        } else {
-            scrollToComponent(tokenUtilRef);
         }
     }
 
@@ -52,11 +52,9 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenUtilRef, 
         scrollHandler();
     },[buttonText])
 
-    
-
-    useEffect(() => {
-        console.log(isScrolled);
-    },[isScrolled]);
+    // useEffect(() => {
+    //     console.log(isScrolled);
+    // },[isScrolled]);
 
     useEffect(() => {
         console.log(buttonText);

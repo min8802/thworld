@@ -2,7 +2,7 @@ import { Flex, Text } from "@chakra-ui/react";
 import { FC } from "react";
 
 
-const TokenEx2 : FC = () => {
+const Services : FC = () => {
     return (
         <>
         <Flex
@@ -26,4 +26,4 @@ const TokenEx2 : FC = () => {
     )
 }
 
-export default TokenEx2;
+export default Services;
