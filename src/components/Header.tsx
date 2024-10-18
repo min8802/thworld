@@ -106,31 +106,31 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
                 </Menu>
                 </Flex>
                 <Button
-                w={["90px","90px","90px","90px","90px","120px","120px"]}
-                h={["30px","30px","30px","30px","30px","36px","36px"]}
-                fontSize={["10px","10px","10px","10px","10px","15px","15px"]} 
-                bgGradient="linear(to-r, #ff3b8f, #ff9a3b)" 
-                color="white"
-                borderRadius="24px"
-                overflow="hidden"
-                _hover= {{
-                    backgroundColor : "#0C0E27",
-                    _before : {
-                        transform : "translateX(100%)",
-                    },
-                }}
-                _before={{
-                    content : "''",
-                    position : "absolute",
-                    top : "0",
-                    left : "0",
-                    width : "100%",
-                    height : "100%",
-                    background : "rgba(255, 255, 255, 0.3)",
-                    transition : "transform 0.5s ease",
-                    transform : "translateX(0%)",
-                }}
-                >WHITE PAPER</Button>
+                    w={["90px","90px","90px","90px","90px","120px","120px"]}
+                    h={["30px","30px","30px","30px","30px","36px","36px"]}
+                    fontSize={["10px","10px","10px","10px","10px","15px","15px"]} 
+                    bgGradient="linear(to-r, #ff3b8f, #ff9a3b)" 
+                    color="white"
+                    borderRadius="24px"
+                    overflow="hidden"
+                    _hover= {{
+                        backgroundColor : "#0C0E27",
+                        _before : {
+                            transform : "translateX(100%)",
+                        },
+                    }}
+                    _before={{
+                        content : "''",
+                        position : "absolute",
+                        top : "0",
+                        left : "0",
+                        width : "100%",
+                        height : "100%",
+                        background : "rgba(255, 255, 255, 0.3)",
+                        transition : "transform 0.5s ease",
+                        transform : "translateX(0%)",
+                    }}
+                    >WHITE PAPER</Button>
             </Flex>
             
         </Flex>

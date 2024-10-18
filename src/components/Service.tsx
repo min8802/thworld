@@ -1,4 +1,4 @@
-import { Flex, Img, Text } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Img, Text } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import serviceTop from "../data/servicesTop.json"
 import serviceBottom from "../data/servicesBottom.json"
@@ -85,9 +85,9 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants}
             animate={serviceTopAnimation}
             variants={tokenExInVariants}
             >
-                <Flex w="1100px" mt={20} gap={8} id="serviceTop">
+                <Grid templateColumns={['repeat(1,1fr)','repeat(1,1fr)','repeat(2,1fr)','repeat(3,1fr)','repeat(3,1fr)','repeat(3,1fr)','repeat(3,1fr)']} w={["330px","330px","780px","1100px","1100px","1100px","1100px"]} mt={20} gap={8} id="serviceTop">
                     {serviceTop.map((v, i) => (
-                        <Flex w="340px" minH="400px" p="20px" flexDir="column" alignItems="center" bgColor="#121833" key={i}>
+                        <GridItem w={["320px","320px","320px","320px","340px","340px","340px"]} minH="400px" p="20px" flexDir="column" display="flex" justifyContent="center" alignItems="center" bgColor="#121833" key={i}>
                             <Img w="40px" src={v.image}/>
                             <Text mt="20px" mb="20px" >
                                 {v.title}
@@ -97,18 +97,10 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants}
                                     {v.content}
                                 </Text>
                             </Flex>
-                        </Flex>
+                        </GridItem>
                     ))}
-                </Flex>
-            </motion.div>
-            <motion.div
-            initial="hidden"
-            animate={serviceBottomAnimation}
-            variants={tokenExInVariants}
-            >
-                <Flex w="1100px" mt={12} gap={8} id="serviceBottom">
                     {serviceBottom.map((v, i) => (
-                        <Flex w ="340px" minH="400px" p="20px" flexDir="column" alignItems="center" bgColor="#121833" key={i}>
+                        <GridItem w ={["320px","320px","320px","320px","340px","340px","340px"]} minH="400px" p="20px" flexDir="column" display="flex" alignItems="center" bgColor="#121833" key={i}>
                             <Img w="40px" src={v.image}/>
                             <Text mt="20px" mb="20px" >
                                 {v.title}
@@ -118,9 +110,9 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants}
                                     {v.content}
                                 </Text>
                             </Flex>
-                        </Flex>
+                        </GridItem>
                     ))}
-                </Flex>
+                </Grid>
             </motion.div>
         </Flex>
         

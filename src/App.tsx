@@ -33,7 +33,7 @@ const ServicesInVariants = {
     opacity: 1, 
     clipPath: "inset(0 0% 0 0%)",
     transition: { 
-      duration: 1.0, 
+      duration: 0.8, 
       delay: 0.5, 
       ease: "easeOut" 
     }
@@ -225,7 +225,7 @@ const App = () => {
         variants={ServicesInVariants}
         ref={tokenAboutRef}
       >
-        <About/>
+        <About isRender={isRender} tokenExInVariants={tokenExInVariants}/>
       </motion.div>
       </>
       </div>
