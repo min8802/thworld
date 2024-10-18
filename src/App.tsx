@@ -33,7 +33,7 @@ const ServicesInVariants = {
     opacity: 1, 
     clipPath: "inset(0 0% 0 0%)",
     transition: { 
-      duration: 0.8, 
+      duration: 1.0, 
       delay: 0.5, 
       ease: "easeOut" 
     }

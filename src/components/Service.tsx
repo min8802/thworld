@@ -43,7 +43,7 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants}
                 }
                 
             },
-            {threshold : 0.4}
+            {threshold : 0.1}
         );
         //entries추가
         if(targetElement) {
@@ -85,9 +85,9 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants}
             animate={serviceTopAnimation}
             variants={tokenExInVariants}
             >
-                <Flex w="1170px" mt={20} gap={12} id="serviceTop">
+                <Flex w="1100px" mt={20} gap={8} id="serviceTop">
                     {serviceTop.map((v, i) => (
-                        <Flex minW="360px" minH="400px" p="20px" flexDir="column" alignItems="center" bgColor="#121833" key={i}>
+                        <Flex w="340px" minH="400px" p="20px" flexDir="column" alignItems="center" bgColor="#121833" key={i}>
                             <Img w="40px" src={v.image}/>
                             <Text mt="20px" mb="20px" >
                                 {v.title}
@@ -106,9 +106,9 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants}
             animate={serviceBottomAnimation}
             variants={tokenExInVariants}
             >
-                <Flex w="1170px" mt={20} gap={12} id="serviceBottom">
+                <Flex w="1100px" mt={12} gap={8} id="serviceBottom">
                     {serviceBottom.map((v, i) => (
-                        <Flex minW="360px" minH="400px" p="20px" flexDir="column" alignItems="center" bgColor="#121833" key={i}>
+                        <Flex w ="340px" minH="400px" p="20px" flexDir="column" alignItems="center" bgColor="#121833" key={i}>
                             <Img w="40px" src={v.image}/>
                             <Text mt="20px" mb="20px" >
                                 {v.title}
