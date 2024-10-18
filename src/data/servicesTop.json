@@ -1,0 +1,17 @@
+[
+    {
+        "image" : "images/service_icon1.png",
+        "title" : "Payment System",
+        "content" : "All services and products provided within Theme Healing World can be paid for using tokens as the payment method. By utilizing the Binance Chain, which boasts high performance and scalability, we can process thousands of transactions per second, offering high throughput and scalability. This is ideal for the THW project, which handles large transaction volumes."
+    },
+    {
+        "image" : "images/service_icon2.png",
+        "title" : "Staking Reward System",
+        "content" : "Through our staking service, individuals who stake a certain amount of THW tokens will be rewarded with a portion of the revenue generated within Theme Healing World. This strategy aims to encourage the use of THW tokens by offering more benefits, thereby maximizing the demand for Theme Healing World tokens."
+    },
+    {
+        "image" : "images/service_icon3.png",
+        "title" : "VIP Lounge Access and Promotion Participation",
+        "content" : "Customers holding a certain amount of THW tokens will receive benefits such as VIP lounge access and participation in various promotions. These benefits include special services in the VIP lounge, two free stays per year in our accommodation facilities, room upgrades, and more, all designed to enhance customer satisfaction."
+    }
+]

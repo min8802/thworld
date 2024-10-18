@@ -91,7 +91,10 @@ const App = () => {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        // console.log(entries[0].target); //entries[0] : services 컴포넌트, entries[1] : about 컴포넌트
+        // console.log(entries.length); // 2
+        for (let i = 0; i < entries.length; i++) {
+          const entry = entries[i];
           if (entry.target === serviceElement) {
             if (entry.isIntersecting) {
               serviceAnimation.start("visible"); // 서비스가 보일 때 애니메이션 트리거
@@ -101,10 +104,12 @@ const App = () => {
               aboutAnimation.start("visible"); // 어바웃이 보일 때 애니메이션 트리거
             }
           }
-        });
+        }
       },
-      { threshold: 0.0 } // 요소가 10% 이상 보이면 트리거
+      { threshold: 0.0 } // 요소가 0%라도 보이면 트리거
     );
+    
+    
     if (serviceElement) {
     console.log("Observing Service Element");
     observer.observe(serviceElement);
@@ -114,9 +119,6 @@ const App = () => {
       console.log("Observing About Element");
       observer.observe(aboutElement);
     }
-
-    if (serviceElement) observer.observe(serviceElement);
-    if (aboutElement) observer.observe(aboutElement);
 
     return () => {
       if (serviceElement) observer.unobserve(serviceElement);
@@ -214,7 +216,7 @@ const App = () => {
         variants={ServicesInVariants}
         ref={tokenServiceRef}
       >
-        <Service setIsRender={setIsRender}/>
+        <Service isRender={isRender} setIsRender={setIsRender} tokenExInVariants={tokenExInVariants}/>
       </motion.div>
 
       <motion.div

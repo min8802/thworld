@@ -56,9 +56,9 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
     //     console.log(isScrolled);
     // },[isScrolled]);
 
-    useEffect(() => {
-        console.log(buttonText);
-    },[buttonText])
+    // useEffect(() => {
+    //     console.log(buttonText);
+    // },[buttonText])
 
     return (
         <>
