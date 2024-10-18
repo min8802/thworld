@@ -1,9 +1,17 @@
 import { Flex, Text } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
+interface ServicesProps {
+    setIsRender : React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const Services : FC = () => {
-    return (
+const Services : FC<ServicesProps> = ({setIsRender}) => 
+    {
+        useEffect(() => {
+            setIsRender(true);
+        },[])
+    
+        return (
         <>
         <Flex
             w="100%"
