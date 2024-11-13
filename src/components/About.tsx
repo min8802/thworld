@@ -35,9 +35,9 @@ const About : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
     return (
         <Flex
             w="100%"
-            minH="90vh"
+            minH="70vh"
             color="white"
-            pt={44}
+            pt={56}
             zIndex={2}
             flexDir="column"
             alignItems="center"

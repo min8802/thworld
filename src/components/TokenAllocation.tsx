@@ -37,7 +37,7 @@ const TokenAllocation : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
     return (
         <Flex
             w="100%"
-            minH="90vh"
+            minH="80vh"
             color="white"
             pt={28}
             zIndex={2}
@@ -53,7 +53,7 @@ const TokenAllocation : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
             variants={tokenExInVariants}
             >
                 <Flex w={["330px","330px","780px","1100px","1100px","1100px","1100px"]} mx="auto" gap={12} id="tokenMid" justifyContent="center" flexDir="column" alignItems="center">
-                    <Img w={["450px","450px","450px","450px","450px","555px","555px"]} src="images/tokenSale.png"/>
+                    <Img w={["400px","400px","400px","400px","400px","500px","500px"]} src="images/tokenSale.png"/>
                     <Flex as="ul" listStyleType="none" gap={["8px","8px","8px","16px","16px","16px","16px"]} fontSize={["12px","12px","12px","16px","16px","16px","16px"]}>
                         <Flex as="li" align="center">
                             <Box boxSize={3} bg="orange.500" borderRadius="sm" mr={2}></Box>

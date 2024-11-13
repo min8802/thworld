@@ -12,10 +12,10 @@ const Contact: FC = () => {
             flexDir="column"
             alignItems="center"
         >
-            <Text fontSize="24px" mb={8} fontWeight="bold">
+            <Text fontSize={["16px","16px","16px","24px","24px","24px","24px"]} mb={8} fontWeight="bold">
                 Contact Information
             </Text>
-            <Flex flexDir="column" alignItems="center" fontSize="16px" lineHeight="1.8">
+            <Flex flexDir="column" alignItems="center" fontSize={["12px","12px","12px","16px","16px","16px","16px"]} lineHeight="1.8">
                 <Text>Company Name: XYZ Corporation</Text>
                 <Text>Email: contact@xyzcorporation.com</Text>
                 <Text>Phone: +1 (123) 456-7890</Text>
