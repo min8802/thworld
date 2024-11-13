@@ -142,7 +142,7 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
             animate={serviceTopAnimation}
             variants={tokenExInVariants}
             >
-                <Grid templateColumns={['repeat(1,1fr)','repeat(1,1fr)','repeat(2,1fr)','repeat(3,1fr)','repeat(3,1fr)','repeat(3,1fr)','repeat(3,1fr)']} w={["330px","330px","780px","1100px","1100px","1100px","1100px"]} mt={20} gap={8} id="serviceTop">
+                <Grid templateColumns={['repeat(1,1fr)','repeat(1,1fr)','repeat(2,1fr)','repeat(3,1fr)','repeat(3,1fr)','repeat(3,1fr)','repeat(3,1fr)']} w={["330px","330px","780px","1100px","1100px","1100px","1100px"]} mt={20} gap={8} id="serviceTop" justifyItems="center">
                     {serviceTopKR.map((v, i) => (
                         <GridItem w={["320px","320px","320px","320px","340px","340px","340px"]} minH="400px" p="20px" flexDir="column" display="flex" justifyContent="center" alignItems="center" bgColor="#121833" key={i}>
                             <Img w="40px" src={v.image}/>
