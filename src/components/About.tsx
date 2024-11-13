@@ -100,7 +100,7 @@ const About : FC<AboutProps> = ({isRender, tokenExInVariants, language}) => {
             w="100%"
             minH="70vh"
             color="white"
-            pt={56}
+            pt={32}
             zIndex={2}
             flexDir="column"
             alignItems="center"
