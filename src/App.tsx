@@ -47,6 +47,7 @@ const App = () => {
   const [init, setInit] = useState(false);
   const [showSpinner, setShowSpinner] = useState(true);
   const [isRender, setIsRender] = useState(false);
+  const [language, setLanguage] = useState<string>("EN");
 
   const tokenHomeRef = useRef<HTMLDivElement>(null);
   const tokenServiceRef = useRef<HTMLDivElement>(null);
@@ -235,6 +236,8 @@ const App = () => {
           tokenServiceRef={tokenServiceRef}
           tokenRef={tokenRef}
           contactRef={contactRef}
+          language={language}
+          setLanguage={setLanguage}
         />
       </motion.div>
 
@@ -244,7 +247,7 @@ const App = () => {
         variants={tokenExInVariants}
         ref={tokenHomeRef}
       >
-        <TokenEx/> 
+        <TokenEx language={language}/> 
       </motion.div>
 
       <motion.div
@@ -253,7 +256,7 @@ const App = () => {
         variants={ServicesInVariants}
         ref={tokenServiceRef}
       >
-        <Service isRender={isRender} setIsRender={setIsRender} tokenExInVariants={tokenExInVariants}/>
+        <Service isRender={isRender} setIsRender={setIsRender} tokenExInVariants={tokenExInVariants} language={language}/>
       </motion.div>
 
       <motion.div
@@ -262,7 +265,7 @@ const App = () => {
         variants={ServicesInVariants}
         ref={tokenAboutRef}
       >
-        <About isRender={isRender} tokenExInVariants={tokenExInVariants}/>
+        <About isRender={isRender} tokenExInVariants={tokenExInVariants} language={language}/>
       </motion.div>
       
       <motion.div
@@ -271,7 +274,7 @@ const App = () => {
         variants={ServicesInVariants}
         ref={tokenRef}
       >
-        <TokenAllocation isRender={isRender} tokenExInVariants={tokenExInVariants}/>
+        <TokenAllocation isRender={isRender} tokenExInVariants={tokenExInVariants} language={language}/>
       </motion.div>
       
       <motion.div
@@ -280,7 +283,7 @@ const App = () => {
         variants={ServicesInVariants}
         ref={tokenRoadmapRef}
       >
-        <TokenRoadMap isRender={isRender} tokenExInVariants={tokenExInVariants}/>
+        <TokenRoadMap isRender={isRender} tokenExInVariants={tokenExInVariants} language={language}/>
       </motion.div>
       
       <motion.div
