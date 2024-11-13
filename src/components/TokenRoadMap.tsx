@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, Text, IconButton, useMediaQuery } from "@chakra-ui/react";
+import { Box, Flex, Text, IconButton, useMediaQuery } from "@chakra-ui/react";
 import { FC, useEffect, useState } from "react";
 import { motion, useAnimation, Variants } from "framer-motion";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";

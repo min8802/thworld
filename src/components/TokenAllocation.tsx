@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, Img, Text } from "@chakra-ui/react";
+import { Box, Flex, Img, Text } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import { motion, useAnimation, Variants } from "framer-motion"; 
 
