@@ -9,14 +9,15 @@ interface HeaderProps {
     tokenHomeRef : React.RefObject<HTMLDivElement>;
     tokenServiceRef : React.RefObject<HTMLDivElement>;
     tokenAboutRef : React.RefObject<HTMLDivElement>;
+    tokenRef : React.RefObject<HTMLDivElement>;
     tokenRoadmapRef : React.RefObject<HTMLDivElement>;
-    
+    contactRef : React.RefObject<HTMLDivElement>;
 }
 
-const HeaderMenu = ["HOME", "SERVICES", "ABOUT", "TOKEN", "ROADMAP", "TEAM", "FAQ", "CONTACT"];
+const HeaderMenu = ["HOME", "SERVICES", "ABOUT", "TOKEN", "ROADMAP", "CONTACT"];
 
 
-const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef, tokenRoadmapRef }) => {
+const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef, tokenRef, tokenRoadmapRef, contactRef }) => {
     
     const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const [buttonText, setButtonText] = useState<string>("");
@@ -34,6 +35,10 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
             scrollToComponent(tokenAboutRef);
         } else if (buttonText === "ROADMAP") {
             scrollToComponent(tokenRoadmapRef);
+        } else if (buttonText === "TOKEN") {
+            scrollToComponent(tokenRef);
+        } else if (buttonText === "CONTACT") {
+            scrollToComponent(contactRef);
         }
     }
 

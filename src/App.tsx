@@ -12,6 +12,9 @@ import Header from "./components/Header";
 import TokenEx from "./components/TokenEx";
 import Service from "./components/Service";
 import About from "./components/About";
+import TokenAllocation from "./components/TokenAllocation";
+import TokenRoadMap from "./components/TokenRoadMap";
+import Contact from "./components/Contact";
 
 
 const headerInVariants = {
@@ -48,11 +51,16 @@ const App = () => {
   const tokenHomeRef = useRef<HTMLDivElement>(null);
   const tokenServiceRef = useRef<HTMLDivElement>(null);
   const tokenAboutRef = useRef<HTMLDivElement>(null);
+  const tokenRef = useRef<HTMLDivElement>(null);
   const tokenRoadmapRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   // 애니메이션 컨트롤을 위해 framer-motion의 useAnimation 훅을 사용합니다.
   const serviceAnimation = useAnimation();
   const aboutAnimation = useAnimation();
+  const tokenAnimation = useAnimation();
+  const tokenRoadmapAnimation = useAnimation();
+  const contactAnimation = useAnimation();
 
   // 최소 1초 동안 로딩 스피너를 보여주기 위한 타이머 설정
   useEffect(() => {
@@ -62,11 +70,6 @@ const App = () => {
 
     return () => clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-     console.log(tokenServiceRef.current);
-    console.log(tokenAboutRef.current);
-  }, [isRender]) 
 
   // tsParticles 초기화
   useEffect(() => {
@@ -87,6 +90,9 @@ const App = () => {
   useEffect(() => {
     const serviceElement = tokenServiceRef.current;
     const aboutElement = tokenAboutRef.current;
+    const tokenElement = tokenRef.current;
+    const tokenRoadmapElement = tokenRoadmapRef.current;
+    const contactElement = contactRef.current;
   
 
     const observer = new IntersectionObserver(
@@ -103,7 +109,19 @@ const App = () => {
             if (entry.isIntersecting) {
               aboutAnimation.start("visible"); // 어바웃이 보일 때 애니메이션 트리거
             }
-          }
+          } else if (entry.target === tokenElement) {
+            if (entry.isIntersecting) {
+              tokenAnimation.start("visible"); // 어바웃이 보일 때 애니메이션 트리거
+            }
+          } else if (entry.target === tokenRoadmapElement) {
+            if (entry.isIntersecting) {
+              tokenRoadmapAnimation.start("visible"); // 어바웃이 보일 때 애니메이션 트리거
+            }
+          } else if (entry.target === contactElement) {
+            if (entry.isIntersecting) {
+              contactAnimation.start("visible"); // 어바웃이 보일 때 애니메이션 트리거
+            }
+          } 
         }
       },
       { threshold: 0.0 } // 요소가 0%라도 보이면 트리거
@@ -119,10 +137,27 @@ const App = () => {
       console.log("Observing About Element");
       observer.observe(aboutElement);
     }
+    
+    if (tokenElement) {
+      console.log("Observing About Element");
+      observer.observe(tokenElement);
+    }
+    
+    if (tokenRoadmapElement) {
+      console.log("Observing About Element");
+      observer.observe(tokenRoadmapElement);
+    }
+    
+    if (contactElement) {
+      console.log("Observing About Element");
+      observer.observe(contactElement);
+    }
 
     return () => {
       if (serviceElement) observer.unobserve(serviceElement);
       if (aboutElement) observer.unobserve(aboutElement);
+      if (tokenElement) observer.unobserve(tokenElement);
+      if (tokenRoadmapElement) observer.unobserve(tokenRoadmapElement);
     };
   }, [isRender]);
 
@@ -198,6 +233,8 @@ const App = () => {
           tokenAboutRef={tokenAboutRef}
           tokenRoadmapRef={tokenRoadmapRef}
           tokenServiceRef={tokenServiceRef}
+          tokenRef={tokenRef}
+          contactRef={contactRef}
         />
       </motion.div>
 
@@ -226,6 +263,33 @@ const App = () => {
         ref={tokenAboutRef}
       >
         <About isRender={isRender} tokenExInVariants={tokenExInVariants}/>
+      </motion.div>
+      
+      <motion.div
+        initial="hidden"
+        animate={tokenAnimation} // 애니메이션 컨트롤러 적용
+        variants={ServicesInVariants}
+        ref={tokenRef}
+      >
+        <TokenAllocation isRender={isRender} tokenExInVariants={tokenExInVariants}/>
+      </motion.div>
+      
+      <motion.div
+        initial="hidden"
+        animate={tokenRoadmapAnimation} // 애니메이션 컨트롤러 적용
+        variants={ServicesInVariants}
+        ref={tokenRoadmapRef}
+      >
+        <TokenRoadMap isRender={isRender} tokenExInVariants={tokenExInVariants}/>
+      </motion.div>
+      
+      <motion.div
+        initial="hidden"
+        animate={contactAnimation} // 애니메이션 컨트롤러 적용
+        variants={ServicesInVariants}
+        ref={contactRef}
+      >
+        <Contact/>
       </motion.div>
       </>
       </div>

@@ -1,42 +1,84 @@
-import { Box, Flex, Img, Text } from "@chakra-ui/react";
-import { FC } from "react";
-import tokenAllocation from "../data/tokenAllocation.json"
-import { FaSquare } from "react-icons/fa";
+import { Box, Button, Flex, Grid, Img, Text } from "@chakra-ui/react";
+import { FC, useEffect } from "react";
+import { motion, useAnimation, Variants } from "framer-motion"; 
 
-const TokenAllocation : FC = () => {
+interface AboutProps {
+    isRender : boolean;
+    tokenExInVariants : Variants;
+}
+
+const TokenAllocation : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
+
+    const tokenMidAnimation = useAnimation();
+
+    useEffect(() => {
+        const targetElement = document.querySelector('#tokenMid');
+        console.log(targetElement);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+                console.log(entry.target)
+                if(entry.target === targetElement) {
+                    if(entry.isIntersecting) {
+                        tokenMidAnimation.start("visible");
+                    }
+                }
+            },
+            {threshold: 0.0}
+        )
+        if(!targetElement) return;
+        observer.observe(targetElement);
+
+        return () => {
+            observer.unobserve(targetElement);
+        }
+    },[isRender])
+
     return (
-        <Flex w="full" minH="100vh" alignItems="center" flexDir="column">
-            <Flex minH="10vh" mt={40} fontSize="40px" fontWeight="bold">TOKEN ALLOCATION</Flex>
-            <Flex w="1200px" h="6vh" alignItems="center" justifyContent="space-between" fontSize="20px">
-                <Flex alignItems="center" gap={2}><FaSquare color="orange"/>Project Development Fund</Flex>
-                <Flex alignItems="center" gap={2}><FaSquare color="green"/>Liquidity Pool</Flex>
-                <Flex alignItems="center" gap={2}><FaSquare color="purple"/>Development and Marketing</Flex>
-                <Flex alignItems="center" gap={2}><FaSquare color="blue"/>Community Rewards</Flex>
-            </Flex>
-            <Flex w="1200px">
-                <Img src="/images/token.png" mt={20}/>
-                <Flex justifyContent="center" flexDir="column">
-                    <Flex w="500px" minH="6vh" justifyContent="space-between" ml={24} mt={12} fontSize="28px" fontWeight="bold">
-                        <Text>Total Supply</Text>
-                        <Text>1,000,000,000 LNWF</Text>
+        <Flex
+            w="100%"
+            minH="90vh"
+            color="white"
+            pt={28}
+            zIndex={2}
+            flexDir="column"
+            alignItems="center"
+        >
+            <Text fontSize="26px" mb={20}>
+                TOKEN SALE PROCEEDS
+            </Text>
+            <motion.div
+            initial="hidden"
+            animate={tokenMidAnimation}
+            variants={tokenExInVariants}
+            >
+                <Flex w={["330px","330px","780px","1100px","1100px","1100px","1100px"]} mx="auto" gap={12} id="tokenMid" justifyContent="center" flexDir="column" alignItems="center">
+                    <Img w={["450px","450px","450px","450px","450px","555px","555px"]} src="images/tokenSale.png"/>
+                    <Flex as="ul" listStyleType="none" gap={["8px","8px","8px","16px","16px","16px","16px"]} fontSize={["12px","12px","12px","16px","16px","16px","16px"]}>
+                        <Flex as="li" align="center">
+                            <Box boxSize={3} bg="orange.500" borderRadius="sm" mr={2}></Box>
+                            <Text>Foundation</Text>
+                        </Flex>
+                        <Flex as="li" align="center">
+                            <Box boxSize={3} bg="pink.500" borderRadius="sm" mr={2}></Box>
+                            <Text>Marketing</Text>
+                        </Flex>
+                        <Flex as="li" align="center">
+                            <Box boxSize={3} bg="blue.300" borderRadius="sm" mr={2}></Box>
+                            <Text>Maintenance</Text>
+                        </Flex>
+                        <Flex as="li" align="center">
+                            <Box boxSize={3} bg="purple.500" borderRadius="sm" mr={2}></Box>
+                            <Text>Sales</Text>
+                        </Flex>
+                        <Flex as="li" align="center">
+                            <Box boxSize={3} bg="green.300" borderRadius="sm" mr={2}></Box>
+                            <Text>Reserve</Text>
+                        </Flex>
                     </Flex>
-                    <Box w="500px" h="4px" ml={24} bg="black"></Box>
-                    {tokenAllocation.map((v,i) => (
-                        <>
-                            {Object.entries(v).map(([key,value]) => (
-                                <>
-                                <Flex w="500px" minH="6vh" justifyContent="space-between" alignItems="center" ml={24} key={i}>
-                                    <Text>{key}</Text>
-                                    <Text>{value}</Text>
-                                </Flex>
-                                <Box w="500px" h="2px" ml={24} bg="gray.200"></Box>
-                                </>
-                            ))}
-                        </>
-                    ))}
                 </Flex>
-            </Flex>
-        </Flex> 
+            </motion.div>
+        </Flex>
     )
 }
 

@@ -1,4 +1,4 @@
-import { Button, Flex, Img, Text } from "@chakra-ui/react";
+import { Button, Flex, Grid, Img, Text } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import { motion, useAnimation, Variants } from "framer-motion"; 
 
@@ -35,9 +35,9 @@ const About : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
     return (
         <Flex
             w="100%"
-            minH="80vh"
+            minH="90vh"
             color="white"
-            pt={28}
+            pt={44}
             zIndex={2}
             flexDir="column"
             alignItems="center"
@@ -50,18 +50,20 @@ const About : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
             animate={aboutMidAnimation}
             variants={tokenExInVariants}
             >
-                <Flex w="880px" gap={28} id="aboutMid">
-                    <Img src="images/about.png"/>
-                    <Flex flexDir="column">
+                <Grid templateColumns={['repeat(1,1fr)','repeat(1,1fr)','repeat(1,1fr)','repeat(2,1fr)','repeat(2,1fr)','repeat(2,1fr)','repeat(2,1fr)']} w={["330px","330px","780px","1000px","1000px","1000px","1000px"]} mx="auto" id="aboutMid">
+                    <Flex justifyContent="center">
+                        <Img src="images/about.png"/>
+                    </Flex>
+                    <Flex flexDir="column" justifyContent="center" alignItems="center">
                         <Text>Theme Healing World is one of the most transformative technologies since the invention of the Internet. 
                             Theme Healing World stands firmly in support of financial freedom and the liberty that THW provides 
                             globally for anyone to voluntarily participate in a permissionless and decentralized network.<br></br><br></br>
                             which empowers people to not be marginalized by governments and financial institutions. THW is freedom.
                         </Text>
                         <Button
-                            w={["90px","90px","90px","90px","90px","140px","140px"]}
-                            h={["36px","36px","36px","36px","36px","46px","46px"]}
-                            fontSize={["16px","16px","16px","16px","16px","20px","20px"]} 
+                            w={["140px","140px","140px","140px","140px","220px","220px"]}
+                            h={["36px","36px","36px","36px","36px","52px","52px"]}
+                            fontSize={["16px","16px","16px","16px","16px","22px","22px"]} 
                             mt={8}
                             bgGradient="linear(to-r, #ff3b8f, #ff9a3b)" 
                             color="white"
@@ -86,7 +88,7 @@ const About : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
                             }}
                             >Let's Start</Button>
                     </Flex>
-                </Flex>
+                </Grid>
             </motion.div>
         </Flex>
     )
