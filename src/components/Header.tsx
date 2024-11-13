@@ -155,7 +155,21 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
             justifyContent="space-between"
             zIndex={4}
             mb={3}>
+            
             <Img minW="180px" src="images/logo_thw.png" zIndex={4}/>
+            <Flex alignItems="center">
+                <Menu>
+                    <MenuButton as={Button} variant="none" color="white" _hover={{"color" : "#A3468C", "transition" : "color 0.5s ease"}}>
+                        <Flex w={10} fontSize={["12px","12px","12px","12px","12px","16px","16px"]}>
+                            EN<BiCaretDown />
+                        </Flex>
+                    </MenuButton>
+                    <MenuList minWidth="100px" border="none" p={0}>
+                        <MenuItem bgColor="#0C0E27" color="white" _hover={{"fontWeight" : "bold", "color" : "#A3468C", "bgColor" : "gray.300", transition : "background-color 0.5s ease, color 0.1s ease"}} onClick={() => setLanguage('EN')}><Image src="images/us.png" w="20px" h="20px" mr={2}/>EN</MenuItem>
+                        <MenuItem bgColor="#0C0E27" color="white" _hover={{"fontWeight" : "bold", "color" : "#A3468C", "bgColor" : "gray.300", transition : "background-color 0.5s ease, color 0.1s ease"}} onClick={() => setLanguage('KR')}><Image src="images/kr.png" w="20px" h="20px" mr={2}/>KR</MenuItem>
+                    </MenuList>
+                </Menu>
+            </Flex>
             <Menu>
                 <MenuButton
                     as={IconButton}
@@ -183,7 +197,9 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
             </MenuList>
         </Menu>
         </Flex>
-        </> : 
+        </> 
+        
+        : 
         
         <>
         <Flex
@@ -271,6 +287,19 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
             zIndex={4}
             mb={3}>
             <Img minW="180px" src="images/logo_thw.png" zIndex={4}/>
+            <Flex alignItems="center">
+                <Menu>
+                    <MenuButton as={Button} variant="none" color="white" _hover={{"color" : "#A3468C", "transition" : "color 0.5s ease"}}>
+                        <Flex w={10} fontSize={["12px","12px","12px","12px","12px","16px","16px"]}>
+                            KR<BiCaretDown />
+                        </Flex>
+                    </MenuButton>
+                    <MenuList minWidth="100px" border="none" p={0}>
+                        <MenuItem bgColor="#0C0E27" color="white" _hover={{"fontWeight" : "bold", "color" : "#A3468C", "bgColor" : "gray.300", transition : "background-color 0.5s ease, color 0.1s ease"}} onClick={() => setLanguage('EN')}><Image src="images/us.png" w="20px" h="20px" mr={2}/>EN</MenuItem>
+                        <MenuItem bgColor="#0C0E27" color="white" _hover={{"fontWeight" : "bold", "color" : "#A3468C", "bgColor" : "gray.300", transition : "background-color 0.5s ease, color 0.1s ease"}} onClick={() => setLanguage('KR')}><Image src="images/kr.png" w="20px" h="20px" mr={2}/>KR</MenuItem>
+                    </MenuList>
+                </Menu>
+            </Flex>
             <Menu>
                 <MenuButton
                     as={IconButton}
